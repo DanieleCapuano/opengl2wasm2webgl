@@ -27,7 +27,7 @@ The webapp will respond on http://localhost:8000
 
 ## Build [C++ to Wasm-based Web App with DEBUG CAPABILITIES]
     cd cpp
-    .\build.bat --context=emcc
+    .\build.bat --context=emccdebug
     cd ..
     npm i
     npm run build [or npm run build-dev for contiuous watching changes]
