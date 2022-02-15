@@ -1,13 +1,19 @@
 #version 300 es
 precision mediump float;
 
+/*
+    WARNING - DON'T USE INLINE COMMENTS NEAR YOUR CODE
+    e.g.
+    uniform float myuniform;    //THIS WON'T WORK
+*/
+
 /* This is the fragment shader for reading in a scene description, including 
    lighting.  Uniform lights are specified from the main program, and used in 
    the shader.  As well as the material parameters of the object.  */
 
 // Inputs to the fragment shader are the outputs of the same name of the vertex shader.
 // Note that the default output, gl_Position, is inaccessible!
-in vec3 mynormal; 
+in vec3 mynormal;
 in vec4 myvertex; 
 
 // You will certainly need this matrix for your lighting calculations

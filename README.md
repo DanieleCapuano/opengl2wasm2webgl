@@ -15,7 +15,7 @@ The final MSYS installation must must include at least the following packages:
   * GLEW
   * GLM
 
-## Build [Web App]
+## Build [C++ to Wasm-based Web App]
     cd cpp
     .\build.bat --context=emcc
     cd ..
@@ -25,12 +25,12 @@ The final MSYS installation must must include at least the following packages:
 
 The webapp will respond on http://localhost:8000
 
-## Build [Web App with DEBUG CAPABILITIES]
+## Build [C++ to Wasm-based Web App with DEBUG CAPABILITIES]
     cd cpp
     .\build.bat --context=emcc
     cd ..
     npm i
-    npm run build
+    npm run build [or npm run build-dev for contiuous watching changes]
     npm run start
 
 The webapp will respond on http://localhost:8000
