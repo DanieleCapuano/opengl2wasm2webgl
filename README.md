@@ -6,7 +6,7 @@ A simple system whose aim is to let you work on a native GLUT + OpenGL C++ app w
 
 
 ## Prerequisites [Tested on a Windows 10 machine]
-* Node.js (tested on version - [INSTALL](https://nodejs.org/download/release/v12.16.1/))
+* Node.js (tested on version 12.16.1 - [INSTALL](https://nodejs.org/download/release/v12.16.1/))
 * Emscripten environment ([INSTALL](https://emscripten.org/docs/getting_started/downloads.html))
 * GCC compilation environment for C++ (this has been tested on Windows using MinGW-64 under MSYS-2 - [INSTALL](https://www.msys2.org/wiki/MSYS2-installation/)). 
 
