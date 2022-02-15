@@ -76,9 +76,9 @@ mat4 Cube::updateModelView(ShaderOpts *opts) {
 	mat4 modelview = opts->modelview_matrix;
 	mat4 translate = Transform::translate(opts->t_x, opts->t_y, 0.);
 
-	printf("TRANSLATE VALUES %.2f %.2f\n", opts->t_x, opts->t_y);
-	modelview = modelview * translate * Transform::scale(cubeSize, cubeSize, cubeSize);
-
+	modelview = modelview * translate;
+	modelview = modelview * Transform::scale(cubeSize, cubeSize, cubeSize);	//transform specific for Cube
+	
 	return modelview;
 }
 
