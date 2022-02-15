@@ -20,7 +20,7 @@ The final MSYS installation must must include at least the following packages:
     .\build.bat --context=emcc
     cd ..
     npm i
-    npm run build
+    npm run build [or npm run build-dev for contiuous watching changes]
     npm run start
 
 The webapp will respond on http://localhost:8000
