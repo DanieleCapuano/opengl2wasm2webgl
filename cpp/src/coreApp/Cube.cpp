@@ -74,7 +74,10 @@ GLuint Cube::initVAO(GLuint program) {
 //here we update the modelview for the current object due to interactive transforms
 mat4 Cube::updateModelView(ShaderOpts *opts) {
 	mat4 modelview = opts->modelview_matrix;
-	modelview = modelview * Transform::scale(cubeSize, cubeSize, cubeSize);
+	mat4 translate = Transform::translate(opts->t_x, opts->t_y, 0.);
+
+	printf("TRANSLATE VALUES %.2f %.2f\n", opts->t_x, opts->t_y);
+	modelview = modelview * translate * Transform::scale(cubeSize, cubeSize, cubeSize);
 
 	return modelview;
 }

@@ -28,6 +28,9 @@ struct ShaderOpts {
 
     float curr_time;
     float opacity;
+
+    float t_x;
+    float t_y;
 } ;
 
 struct BufferData {

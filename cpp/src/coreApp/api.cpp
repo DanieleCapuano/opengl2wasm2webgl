@@ -10,7 +10,7 @@
 using namespace std;
 
 int screen_width, screen_height;
-vec3 eye_pos(0.0, 3.0, 5.0);
+vec3 eye_pos(0.0, 0.0, 5.0);
 vec3 up_pos(0.0, 1.0, 0.0);
 vec3 center_pos(0.0, 0.0, 0.0);
 
@@ -24,7 +24,7 @@ void videoInit(int width, int height) {
     glewInit();
 }
 
-void updateOptions(ShaderOpts *options, float time, float opacity) {
+void updateOptions(ShaderOpts *options, float time, float opacity, float t_x, float t_y) {
 	options->curr_time = time;
 	options->opacity = opacity;
 
@@ -58,6 +58,9 @@ void updateOptions(ShaderOpts *options, float time, float opacity) {
 
 	options->curr_time = time;
 	options->opacity = opacity;
+
+	options->t_x = t_x;
+	options->t_y = t_y;
 }
 
 extern "C" int initGLAPI(int width, int height) {
@@ -70,8 +73,14 @@ extern "C" int initGLAPI(int width, int height) {
 	return 1;
 }
 
-extern "C" void drawAPI(float width, float height, float time, float opacity) {
-	// cerr << "VALUES -- " << width << ", " << height << ", " << time << ", " << opacity << endl;
+extern "C" void drawAPI(
+	float width, float height, 
+	float time, float opacity,
+	float translate_x, float translate_y
+	//, float translate_z,
+	// float rotate_x, float rotate_y, float rotate_z,
+	// float scale_x, float scale_y, float scale_z
+) {
 	//to manage window resize
 	glutInitWindowSize(width, height);
 
@@ -81,7 +90,7 @@ extern "C" void drawAPI(float width, float height, float time, float opacity) {
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
 
-	updateOptions(&opts, time, opacity);
+	updateOptions(&opts, time, opacity, translate_x, translate_y);
 	SCENE.draw(width, height, &opts);
 
 	//swap buffer to make whatever we've drawn to backbuffer appear on the screen
