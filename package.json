@@ -1,0 +1,29 @@
+{
+    "name": "ogl2wasm2webgl",
+    "main": "index.html",
+    "window": {
+        "fullscreen": true
+    },
+    "scripts": {
+        "build": "node node_modules/rimraf dist && node node_modules/webpack/bin/webpack.js",
+        "build-watch": "node node_modules/rimraf dist && node node_modules/webpack/bin/webpack.js -w",
+        "start": "node ./server/main.js"
+    },
+    "dependencies": {
+        "webpack": "^4.4.0",
+        "webpack-cli": "^3.3.11",
+        "raw-loader": "",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.14.1",
+        "node-sass-glob-importer": "^5.3.2",
+        "terser-webpack-plugin": "",
+        "css-loader": "^3.2.0",
+        "sass-loader": "^8.0.0",
+        "file-loader": "",
+        "@babel/core": "",
+        "@babel/preset-env": "",
+        "babel-loader": "",
+        "express": "*",
+        "rimraf": "*"
+    }
+}

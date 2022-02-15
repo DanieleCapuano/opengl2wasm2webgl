@@ -1,0 +1,4 @@
+{
+    "CUBE_VERT": "cube.vert.glsl",
+    "CUBE_FRAG": "cube.frag.glsl"
+}

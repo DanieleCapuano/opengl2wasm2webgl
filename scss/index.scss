@@ -1,0 +1,18 @@
+@import "./utils";
+
+html {
+    @extend .full;
+}
+
+
+body {
+    @extend .full;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+#canvas {
+    @extend .full;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenGL2Wasm2WebGL</title>
+    <link rel="stylesheet" href="dist/style/main.css">
+</head>
+<body onload="LIB_main.API.start()">
+    <canvas id="canvas"></canvas>
+    <script>
+        window.Module = {};
+    </script>
+    <script src="cpp/wasm_build.js"></script>
+    <script src="dist/bundle_main.js"></script>
+</body>
+</html>
