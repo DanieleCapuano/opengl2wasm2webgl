@@ -86,11 +86,4 @@ vec4 manageLights(void) {
 void main (void) {
     vec4 zero_one_color = u_ambient + u_emission + manageLights();
     fragColor = zero_one_color;
-    
-    // vec4(
-    //     zero_one_color.r * 256.,
-    //     zero_one_color.g * 256.,
-    //     zero_one_color.b * 256.,
-    //     zero_one_color.a
-    // );
 }
