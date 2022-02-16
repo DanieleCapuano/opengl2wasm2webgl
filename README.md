@@ -41,7 +41,7 @@ The webapp will respond on http://localhost:8000
     .\native.exe
 
 ## WARNING: COMMENTS management in GLSL files
-There's a node.js - based script which reads the .glsl files in cpp/shaders-def/src and exposes them as single-line strings withing the "shaders-def.h" header file. Due to the implementation of such script, please **avoid using inline comments, your shaders will break!**. For example
+There's a node.js - based script which reads the .glsl files in cpp/shaders-def/src and exposes them as single-line strings within the "shaders-def.h" header file. Due to the implementation of such script, please **avoid using inline comments, your shaders will break!**. For example
 
     #version 300 es
     precision mediump float;
