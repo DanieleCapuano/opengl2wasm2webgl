@@ -25,27 +25,15 @@ void display() {
 void specialKey(int key, int x, int y) {
   switch(key) {
     case 100: //left
-    //   if (transop == view) Transform::left(amount, eye,  up);
-    //   else if (transop == scale) sx -= amount * 0.01 ; 
-    //   else if (transop == translate) tx -= amount * 0.01 ; 
         t_x -= .1;
         break;
     case 101: //up
-    //   if (transop == view) Transform::up(amount,  eye,  up);
-    //   else if (transop == scale) sy += amount * 0.01 ; 
-    //   else if (transop == translate) ty += amount * 0.01 ; 
         t_y += .1;
         break;
     case 102: //right
-    //   if (transop == view) Transform::left(-amount, eye,  up);
-    //   else if (transop == scale) sx += amount * 0.01 ; 
-    //   else if (transop == translate) tx += amount * 0.01 ; 
         t_x += .1;
         break;
     case 103: //down
-    //   if (transop == view) Transform::up(-amount,  eye,  up);
-    //   else if (transop == scale) sy -= amount * 0.01 ; 
-    //   else if (transop == translate) ty -= amount * 0.01 ; 
         t_y -= .1;
         break;
   }
