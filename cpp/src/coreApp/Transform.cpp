@@ -78,11 +78,7 @@ mat4 Transform::translate(const float &tx, const float &ty, const float &tz) {
 }
 
 // To normalize the up direction and construct a coordinate frame.  
-// As discussed in the lecture.  May be relevant to create a properly 
-// orthogonal and normalized up. 
-// This function is provided as a helper, in case you want to use it. 
-// Using this function (in readfile.cpp or display.cpp) is optional.  
-
+// May be relevant to create a properly orthogonal and normalized up. 
 vec3 Transform::upvector(const vec3 &up, const vec3 & zvec) {
     vec3 x = glm::cross(up,zvec); 
     vec3 y = glm::cross(zvec,x); 
