@@ -27,6 +27,10 @@
 using namespace std;
 
 extern "C" int initGLAPI(int width, int height);
-extern "C" void drawAPI(float width, float height, float time, float opacity, float translate_x, float translate_y);
+extern "C" void drawAPI(
+    float width, float height, float time, float opacity, 
+    float translate_x, float translate_y,
+    float rotate_x, float rotate_y
+);
 
 #endif

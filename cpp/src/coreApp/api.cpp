@@ -24,13 +24,16 @@ void videoInit(int width, int height) {
     glewInit();
 }
 
-void updateOptions(ShaderOpts *options, float time, float opacity, float t_x, float t_y) {
+void updateOptions(ShaderOpts *options, float time, float opacity, float t_x, float t_y, float r_x, float r_y) {
 	options->curr_time = time;
 	options->opacity = opacity;
 
 	options->eye = eye_pos;
 	options->center = center_pos;
 	options->up = Transform::upvector(up_pos, vec3(eye_pos - center_pos));
+
+	Transform::left(r_x, options->eye, options->up);
+	Transform::up(r_y, options->eye, options->up);
 
 	options->nlights = 2;
 	//light 1
@@ -76,10 +79,8 @@ extern "C" int initGLAPI(int width, int height) {
 extern "C" void drawAPI(
 	float width, float height, 
 	float time, float opacity,
-	float translate_x, float translate_y
-	//, float translate_z,
-	// float rotate_x, float rotate_y, float rotate_z,
-	// float scale_x, float scale_y, float scale_z
+	float translate_x, float translate_y,
+	float rotate_x, float rotate_y
 ) {
 	//to manage window resize
 	glutInitWindowSize(width, height);
@@ -90,7 +91,7 @@ extern "C" void drawAPI(
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
 
-	updateOptions(&opts, time, opacity, translate_x, translate_y);
+	updateOptions(&opts, time, opacity, translate_x, translate_y, rotate_x, rotate_y);
 	SCENE.draw(width, height, &opts);
 
 	//swap buffer to make whatever we've drawn to backbuffer appear on the screen
